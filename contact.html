@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GMKI - Contact</title>
+
+    <!-- feather icon start -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <!-- feather icon end-->
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js"></script>
+
+    <link rel="stylesheet" href="styless.css" />
+    <link rel="icon" type="image/x-icon" href="logoicon.png" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img
+          src="logoicon.png"
+          alt="logo gereja"
+          class="logo"
+          style="
+            width: 50px;
+            height: auto;
+            border-radius: 50%;
+            vertical-align: middle;
+          "
+        />
+        <b><i>Generasi Muda</i></b>
+        <span style="color: #34c759">
+          <b><i> Kristen Indonesia</i></b>
+        </span>
+      </div>
+
+      <nav>
+        <div class="navbar-nav">
+          <a href="home.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="Join-Us.html">Join Us</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="navbar-extra">
+          <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
+        </div>
+      </nav>
+    </header>
+
+    <style>
+      .contact-form {
+        margin-top: 50px;
+        padding: 20px;
+        background-color: #f8f8f8;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .contact-form h1 {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-group label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        resize: vertical;
+      }
+    </style>
+
+    <section class="contact-form">
+      <h1>Contact Us</h1>
+      <form
+        name="contact-gmki"
+        method="post"
+        autocomplete="off"
+        enctype="text/plain"
+      >
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            name="Nama"
+            id="name"
+            placeholder="Your Full Name"
+            minlength="4"
+            required
+            style="
+              width: 100%;
+              padding: 10px;
+              border: 1px solid #ccc;
+              border-radius: 3px;
+              resize: vertical;
+            "
+          />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            name="Email"
+            id="email"
+            placeholder="example@gmail.com"
+            required
+            style="
+              width: 100%;
+              padding: 10px;
+              border: 1px solid #ccc;
+              border-radius: 3px;
+              resize: vertical;
+            "
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="subject">WhatsApp</label>
+          <input
+            type="tel"
+            name="WhatsApp"
+            id="nohp"
+            minlength="6"
+            maxlength="13"
+            placeholder="+62-899-9463-535"
+            required
+            style="
+              width: 100%;
+              padding: 10px;
+              border: 1px solid #ccc;
+              border-radius: 3px;
+              resize: vertical;
+            "
+          />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea
+            id="message"
+            name="Pesan"
+            cols="30"
+            rows="10"
+            required
+            style="
+              width: 100%;
+              padding: 10px;
+              border: 1px solid #ccc;
+              border-radius: 3px;
+              resize: vertical;
+            "
+          ></textarea>
+        </div>
+
+        <div style="display: flex; justify-content: center">
+          <button
+            type="submit"
+            class="btn"
+            style="
+              padding: 10px 20px;
+              font-size: 16px;
+              color: yellow;
+              background-color: #34c759;
+              border: none;
+              border-radius: 3px;
+              cursor: pointer;
+              transition: background-color 0.3s ease;
+            "
+            onmouseover="this.style.backgroundColor='#34c759'"
+            onmouseout="this.style.backgroundColor='#34c759'"
+          >
+            <b>Send Message</b>
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <footer>
+      <div class="footer-content">
+        <p>
+          <b><i> &copy; 2024 GMKI</i></b>
+          <a href="home/Privacy Policy.html"><i>Privacy Policy</i></a>
+          <a href="home/Terms Of Service.html"><i>Terms of Service</i></a>
+        </p>
+      </div>
+    </footer>
+
+    <!-- feather icons start -->
+    <script>
+      feather.replace();
+    </script>
+    <!-- feather icons end -->
+    <script>
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbzg75IGr38aUwiJvsRkGZE6s3XhXccirM00lLnBQB4NCAOR0-_YY9K-slhOwTgXxZa5/exec";
+      const form = document.forms["contact-gmki"];
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => console.log("Success!", response))
+          .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Join Us - Generasi Muda Kristen Indonesia</title>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js"></script>
+    <link rel="stylesheet" href="styless.css" />
+    <link rel="icon" type="image/x-icon" href="logoicon.png" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img
+          src="logoicon.png"
+          alt="logo gereja"
+          class="logo"
+          style="
+            width: 50px;
+            height: auto;
+            border-radius: 50%;
+            vertical-align: middle;
+          "
+        />
+        <b><i>Generasi Muda</i></b>
+        <span style="color: #34c759">
+          <b><i> Kristen Indonesia</i></b>
+        </span>
+      </div>
+      <nav>
+        <div class="navbar-nav">
+          <a href="home.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="#join-us">Join Us</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="navbar-extra">
+          <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section
+        id="join-us"
+        class="join-us-section"
+        style="background: url(logo.png) no-repeat center center"
+      >
+        <h1 style="color: white">Join Us</h1>
+        <!-- <div
+          class="alert alert-warning alert-dismissible fade show d-none"
+          role="alert"
+        >
+          <strong>Holy guacamole!</strong> You should check in on some of those
+          fields below.
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="alert"
+            aria-label="Close"
+          ></button> -->
+        </div>
+        <form
+          name="join-us-gmki"
+          method="POST"
+          autocomplete="off"
+          target="_blank"
+          class="join-us-form"
+          onsubmit="this.action += '&' + $(this).serialize();"
+        >
+          <label for="name" class="form-label">Full Name:</label>
+          <input
+            type="text"
+            name="Full Name"
+            id="name"
+            placeholder="Your Full Name"
+            minlength="4"
+            required
+            class="form-input"
+          />
+
+          <label for="email" class="form-label">Email:</label>
+          <input
+            type="email"
+            name="Email"
+            id="email"
+            placeholder="example@gmail.com"
+            required
+            class="form-input"
+          />
+          <label for="origin" class="form-label">Origin:</label>
+          <input
+            type="text"
+            id="origin"
+            name="Asal"
+            placeholder="Jakarta Timur"
+            required
+            class="form-input"
+          />
+
+          <label for="church" class="form-label">Church:</label>
+          <input
+            type="text"
+            id="church"
+            name="Gereja"
+            placeholder="Gereja Oikoumene Halim"
+            required
+            class="form-input"
+          />
+
+          <label for="gender" class="form-label">Gender:</label>
+          <select id="gender" name="Jenis Kelamin" required class="form-select">
+            <option value="Laki-laki">Male</option>
+            <option value="Perempuan">Female</option>
+            
+          </select>
+
+          <label for="birth" class="form-label">Birth:</label>
+          <input
+            type="date"
+            id="birth"
+            name="Tanggal Lahir"
+            required
+            class="form-input"
+          />
+
+          <label for="age" class="form-label">Age:</label>
+          <input
+            type="number"
+            id="age"
+            name="Umur"
+            placeholder="20"
+            required
+            class="form-input"
+          />
+
+          <label for="job" class="form-label">Job:</label>
+          <input
+            type="text"
+            id="job"
+            name="Pekerjaan"
+            placeholder="Mahasiswa"
+            required
+            class="form-input"
+          />
+
+          <label for="phone" class="form-label">WhatsApp:</label>
+          <input
+            type="tel"
+            name="No WhatsApp"
+            id="nohp"
+            minlength="6"
+            maxlength="16"
+            placeholder="+62-899-9463-535"
+            required
+            class="form-input"
+          />
+
+          <button type="submit" class="form-button btn btn-submit">
+            <b>Submit</b>
+          </button>
+        </form>
+        <script>
+          document
+            .querySelector(".join-us-form")
+            .addEventListener("submit", () => {
+              window.location.href =
+                "https://chat.whatsapp.com/C0jWmJVAq0ACCqsjeXzbGc";
+            });
+        </script>
+      </section>
+    </main>
+
+    <style>
+      .join-us-section {
+        text-align: center;
+        padding: 3rem 10%;
+        margin-top: 2rem;
+        background: #f00e0e;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .join-us-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 2rem;
+        border-radius: 5px;
+        background-color: white;
+      }
+
+      .form-label {
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        color: #555;
+      }
+
+      .form-input,
+      .form-select,
+      .form-textarea {
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+        border: none;
+        background-color: #eee;
+        color: #555;
+      }
+
+      .form-button {
+        padding: 1rem 2rem;
+        background-color: #34c759;
+        color: #f7dc6f;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .form-button:hover {
+        background-color: #f7dc6f;
+        color: #34c759;
+      }
+    </style>
+
+    <footer>
+      <div class="footer-content">
+        <p>
+          <b><i> &copy; 2024 GMKI</i></b>
+          <a href="home/Privacy Policy.html"><i>Privacy Policy</i></a>
+          <a href="home/Terms Of Service.html"><i>Terms of Service</i></a>
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      feather.replace();
+    </script>
+    <script>
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbwxGupkmNF3cUuKbiQZCAj5-msAc54rFOi-Pe2pzVRKYjUpASFDBjZvQC2axP3T7nXxcg/exec";
+      const form = document.forms["join-us-gmki"];
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => console.log("Success!", response))
+          .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
